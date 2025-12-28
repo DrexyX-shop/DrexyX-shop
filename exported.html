@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Free Fire Diamonds</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(180deg,#0b1f3a,#0f3f7a);
+    color: white;
+}
+header {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+}
+header h1 {
+    color: #38bdf8;
+}
+.container {
+    padding: 20px;
+}
+.card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 20px;
+}
+button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background: #38bdf8;
+    cursor: pointer;
+}
+button:hover {
+    background: #0ea5e9;
+}
+select, input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+}
+.note {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: .85;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💎 Free Fire Diamonds</h1>
+    <p>Быстро • Безопасно • Оплата через Telegram</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Купить алмазы</h2>
+
+        <label>ID игрока</label>
+        <input id="playerId" type="text" placeholder="Введите ID">
+
+        <label>Пакет</label>
+        <select id="pack">
+            <option value="100 алмазов — 150₽">100 алмазов — 150₽</option>
+            <option value="310 алмазов — 450₽">310 алмазов — 450₽</option>
+            <option value="520 алмазов — 750₽">520 алмазов — 750₽</option>
+            <option value="1060 алмазов — 1400₽">1060 алмазов — 1400₽</option>
+        </select>
+
+        <button onclick="order()">Оплатить через Telegram</button>
+
+        <div class="note">
+            После оплаты пришлите чек в Telegram
+        </div>
+    </div>
+</div>
+
+<script>
+function order() {
+    const id = document.getElementById("playerId").value;
+    const pack = document.getElementById("pack").value;
+
+    if (!id) {
+        alert("Введите ID игрока");
+        return;
+    }
+
+    const text =
+      `Здравствуйте! Хочу купить алмазы Free Fire.%0A` +
+      `ID: ${id}%0A` +
+      `Пакет: ${pack}`;
+
+    // ТВОЙ TELEGRAM
+    window.open("https://t.me/Sardor_alimatov99?text=" + text, "_blank");
+}
+</script>
+
+</body>
+</html>
